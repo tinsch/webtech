@@ -106,7 +106,7 @@ h1, h3, h4, h5, p {
 }
 
 h1, h2, h3, h4 {
-  color: #3580D2;
+  color: #006B82;
 }
 
 h1 {
@@ -154,7 +154,7 @@ a:hover {
 }
 
 a {
-  color: #3580D2;
+  color: #006B82;
   text-decoration: none;
 }
 
@@ -174,7 +174,7 @@ Buttons
 .btn {
   border-radius: 5px;
   color: #fff;
-  background-color: #3580D2;
+  background-color: #006B82;
   cursor: pointer;
   display: inline-block;
   font-weight: 400;
@@ -184,13 +184,13 @@ Buttons
 }
 
 .btn-alt {
-  border: 1px solid #3590D2;
+  border: 1px solid #006B82;
   padding: 10px 30px;
 }
 
 .btn-alt:hover {
   background: #fff;
-  color: #3590D2;
+  color: #006B82;
 }
 
 /*
@@ -260,8 +260,8 @@ Primary Header
 }
 
 .logo {
-  background-color: #FF6600;
-  background: #FF6600 url("icon.png") 5px 50% no-repeat;
+  background-color: #FF7319;
+  background: #FF7319 url("icon.png") 5px 50% no-repeat;
   padding: 16px 16px 16px 16px;
   border-radius: 25px 5px 25px 5px ;
   float: left;
@@ -299,7 +299,11 @@ Primary Header
 }
 
 .primary-header a:hover {
-  color: #9A9A9A;
+  color: #00F6FF;
+}
+
+.primary-header .logo a:hover {
+  color: #fff;
 }
 
 /*
@@ -325,7 +329,7 @@ Primary Footer
 }
 
 .primary-footer a:hover {
-  color: #9A9A9A;
+  color: #00F6FF;
 }
 
 /*
@@ -335,12 +339,13 @@ Custom Styles
 */
 
 body {
-  background: #3580D2;
+  background: #00ACB2;
   color: #9A9A9A;
   font: 400 16px/22px "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .description-list dt {
+  color: #006B82;
   font-size: 24px;
   padding-bottom: 10px;
 }
