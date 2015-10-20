@@ -152,6 +152,7 @@ a:hover {
   color: #9A9A9A;
   text-decoration: none;
 }
+
 a {
   color: #3580D2;
   text-decoration: none;
@@ -172,13 +173,24 @@ Buttons
 
 .btn {
   border-radius: 5px;
+  color: #fff;
+  background-color: #3580D2;
+  cursor: pointer;
   display: inline-block;
+  font-weight: 400;
+  letter-spacing: .5px;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .btn-alt {
-  border: 1px solid #dfe2e5;
+  border: 1px solid #3590D2;
   padding: 10px 30px;
+}
+
+.btn-alt:hover {
+  background: #fff;
+  color: #3590D2;
 }
 
 /*
@@ -188,9 +200,10 @@ Home
 */
 
 .hero {
+  background: #fff;
   line-height: 44px;
-  padding: 22px 80px 66px 80px;
-  text-align: center;
+  padding: 22px 22px 22px 22px;
+  text-align: left;
 }
 
 .hero h2 {
@@ -200,6 +213,7 @@ Home
 .hero p {
   font-size: 24px;
 }
+
 
 /*
 ==================================
@@ -224,30 +238,68 @@ Clearfix
 
 /*
 ==================================
+Rows
+==================================
+*/
+
+.row {
+  background: #fff;
+  min-width: 960px;
+  padding: 66px 0 44px;
+}
+
+
+/*
+==================================
 Primary Header
 ==================================
 */
 
+.primary-header {
+  padding: 44px 0 22px 22px;
+}
+
 .logo {
-  border-top: 4px solid #3580D2;
-  padding: 40px 0 22px 0;
+  background-color: #FF6600;
+  background: #FF6600 url("icon.png") 5px 50% no-repeat;
+  padding: 16px 16px 16px 16px;
+  border-radius: 25px 5px 25px 5px ;
   float: left;
   font-size: 48px;
   line-height: 44px;
-  font-weight: 600;
+  font-weight: 900;
+  letter-spacing: -5px;
 }
 
 .tagline {
+  color: #fff;
   margin: 66px 0 22px 0;
   text-align: right;
 }
 
 .primary-nav {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
-  letter-spacing: .5px;
-  text-transform: uppercase;
   text-align: right;
+  text-transform: uppercase;
+}
+
+.primary-nav li {
+  display: inline-block;
+  margin: 0 5px;
+  vertical-align: top;
+}
+
+.primary-nav li:last-child {
+  margin-right: 0;
+}
+
+.primary-header a {
+  color: #fff;
+}
+
+.primary-header a:hover {
+  color: #9A9A9A;
 }
 
 /*
@@ -257,15 +309,23 @@ Primary Footer
 */
 
 .primary-footer {
-  color: #9A9A9A;
+  color: #fff;
   font-size: 14px;
-  padding-bottom: 44px;
   padding-top: 44px;
 }
 
 .primary-footer small {
   float: left;
   font-weight: 400;
+}
+
+.primary-footer a {
+  color: #fff;
+  text-align: right;
+}
+
+.primary-footer a:hover {
+  color: #9A9A9A;
 }
 
 /*
@@ -275,6 +335,19 @@ Custom Styles
 */
 
 body {
+  background: #3580D2;
   color: #9A9A9A;
-  font: 300 16px/22px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 400 16px/22px "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.description-list dt {
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+
+.description-list dd {
+  font-size: 18px;
+  padding-bottom: 44px;
+  padding-left: 22px;
+}
+
