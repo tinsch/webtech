@@ -18,6 +18,11 @@ footer {
   margin-top: 44px;
 }
 
+footer a {
+  color: #fff;
+  padding-right: 10px;
+}
+
 form {
   margin-top: 35px;
 }
