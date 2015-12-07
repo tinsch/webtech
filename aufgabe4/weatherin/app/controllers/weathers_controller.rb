@@ -6,11 +6,15 @@ class WeathersController < ApplicationController
         flash[:notice] = "A saved weather has been found!"
       else 
         json = ApiClient.getweather(params[:search])
-        parsed_weather = ParsedWeather.new(json)
-        @weather = Weather.new(city: parsed_weather.city, 
-                              value: parsed_weather.value,
-                              temperature: parsed_weather.temperature)
-        @weather.save
+        if json.present?
+          parsed_weather = ParsedWeather.new(json)
+          @weather = Weather.new(city: parsed_weather.city, 
+                                value: parsed_weather.value,
+                                temperature: parsed_weather.temperature)
+          @weather.save
+        else
+          flash[:notice] = "There is probably a network connection error :("
+        end
       end
     end
   end
