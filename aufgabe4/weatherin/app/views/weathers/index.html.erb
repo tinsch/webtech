@@ -1,19 +1,23 @@
-<p id="notice">
-  <%= flash[:notice] %>
-</p>
-<% flash.clear %>
-
-<h1>How is the weather in</h1>
-
-<%= form_tag weathers_path, method: 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Find out", name: nil %>
+<div class="transparent">
+  <p class="notice">
+    <%= flash[:notice] %>
   </p>
-<% end %>
+  <% flash.clear %>
 
-<% if @weather %>
-<h3>Weather in <%= @weather.city %></h3>
-<p>Temperature: <%= @weather.temperature %>°C</p>
-<p>Weather conditions: <%= @weather.value %></p>
-<% end %>
+  <div class="container">
+    <h1>How is the weather in</h1>
+
+    <%= form_tag weathers_path, method: 'get' do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Find out", name: nil %>
+      </p>
+    <% end %>
+
+    <% if @weather %>
+    <h3>Weather in <%= @weather.city %></h3>
+    <p>Temperature: <%= @weather.temperature %>°C</p>
+    <p>Weather conditions: <%= @weather.value %></p>
+    <% end %>
+  </div>
+</div>

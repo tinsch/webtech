@@ -1,3 +1,28 @@
 // Place all the styles related to the Weathers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-image: url('/assets/weatherin_background.jpg');
+  background-size: 150%;
+  background-repeat: no-repeat;
+  font: 400 22px/32px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+}
+
+.container {
+  padding-top: 66px;
+  text-align: center;
+  margin: auto;
+  color: #fff;
+}
+
+.notice {
+  padding-top: 22px;
+  text-align: center;
+  color: #fff;
+}
+
+.transparent {
+  background-color: #000;
+  opacity:0.7;
+}
