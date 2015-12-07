@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(version: 20151129182133) do
 
   create_table "weathers", force: :cascade do |t|
-    t.string   "city"
-    t.integer  "temperature"
-    t.string   "value"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "city",        limit: 255
+    t.integer  "temperature", limit: 4
+    t.string   "value",       limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
 end
