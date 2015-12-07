@@ -6,23 +6,30 @@ body {
   background-size: 150%;
   background-repeat: no-repeat;
   font: 400 22px/32px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
   color: #fff;
 }
 
 .container {
-  padding-top: 66px;
+  padding-top: 48px;
   text-align: center;
   margin: auto;
   color: #fff;
 }
 
 .notice {
-  padding-top: 22px;
+  padding-top: 160px;
   text-align: center;
   color: #fff;
 }
 
-.transparent {
-  background-color: #000;
-  opacity:0.7;
+h1 {
+  color: #fff;
+  font-weight: 200;
+  font-size: 44px;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 28px;
 }
