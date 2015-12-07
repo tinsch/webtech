@@ -1,11 +1,14 @@
-<p id="notice"><%= flash[:notice] %></p>
+<p id="notice">
+  <%= flash[:notice] %>
+</p>
+<% flash.clear %>
 
 <h1>How is the weather in</h1>
 
 <%= form_tag weathers_path, method: 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Lookup", name: nil %>
+    <%= submit_tag "Find out", name: nil %>
   </p>
 <% end %>
 
