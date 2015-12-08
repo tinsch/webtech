@@ -13,7 +13,7 @@ class WeathersController < ApplicationController
                                 temperature: parsed_weather.temperature)
           @weather.save
         else
-          flash[:notice] = "There is probably a network connection error :("
+          flash[:notice] = "Your input can't be processed or there is a network connection error :("
         end
       end
     end

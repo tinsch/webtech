@@ -5,10 +5,12 @@ class ApiClient
 
   def self.getweather(cityname)
     city = cityname.gsub(/\s+/, "")
-    uri = URI.parse("http://api.openweathermap.org/data/2.5/weather?q=#{city}&appid=#{ENV['WEATHERAPI_KEY']}")
-    begin response = Net::HTTP.get_response(uri) 
+    begin 
+      uri = URI.parse("http://api.openweathermap.org/data/2.5/weather?q=#{city}&appid=#{ENV['WEATHERAPI_KEY']}")
+      response = Net::HTTP.get_response(uri) 
       response.body  
-    rescue 
+    rescue StandardError => e
+      Rails.logger.error "An Error ocurred: #{e}"
       nil
     end 
   end
