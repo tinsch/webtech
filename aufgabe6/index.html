@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Wifi cheat sheet</title>
+  <script src="sript.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Wifi cheat sheet</h1>
+  </header>
+  <section>
+
+    <form>
+      <fieldset>
+        <label>
+          <span>SSID</span>
+          <input id="ssid" type="text" name="ssid">
+        </label>
+        <label>
+          <span>Password</span>
+          <input id="password" type="text" name="password">
+        </label>
+        <label>
+          <span>hidden</span>
+          <input id="hidden" type="checkbox" value="1">
+        </label>
+        <label>
+          <span>Encryption</span>
+          <select name="encryption">
+            <option value="WPA2">WPA2</option>
+            <option value="WEP">WEP</option>
+            <option value="">No encryption</option>
+          </select>
+        </label>
+        <button type="button">Show</button>
+
+        <div id="output"></div>
+      </fieldset>
+    </form>
+  </section>
+
+</body>
