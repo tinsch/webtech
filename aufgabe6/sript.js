@@ -1,23 +1,31 @@
 document.addEventListener('DOMContentLoaded', init);
 
+var handler;
+
 function init() {
 
   var ssid = document.getElementById('ssid');
   var password = document.getElementById('password');
-  var hidden = document.getElementById('hidden')
+  var hidden = document.getElementById('hidden');
   var encryption = document.querySelector('select');
   var button = document.querySelector('button');
   var output = document.getElementById('output');
 
-
-  button.addEventListener('click', function() {
-
-    output.appendChild(showQRCode('WIFI:S:'+ssid.value+
+  handler = function handler(event) {
+    if(output.lastChild) {
+      output.replaceChild(showQRCode('WIFI:S:'+ssid.value+
                                   ';T:'+encryption.value+
                                   ';P:'+password.value+
-                                  ';H:'+(hidden.value === 1 ? 'true' : 'false')+';;'));
-
-  });
+                                  ';H:'+hidden.checked+';;'),
+                          output.lastChild);
+    }
+    else {
+      output.appendChild(showQRCode('WIFI:S:'+ssid.value+
+                                  ';T:'+encryption.value+
+                                  ';P:'+password.value+
+                                  ';H:'+hidden.checked+';;'));
+    }
+  }
 }
 
 

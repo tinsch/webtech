@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Wifi cheat sheet</title>
+  <link rel="stylesheet" href="stylesheet.css">
   <script src="sript.js"></script>
 </head>
 
 <body>
-  <header>
+  <header class="grid">
     <h1>Wifi cheat sheet</h1>
   </header>
   <section>
 
     <form>
-      <fieldset>
+      <fieldset class="grid wifi-form-group">
         <label>
           <span>SSID</span>
-          <input id="ssid" type="text" name="ssid">
+          <input id="ssid" type="text" name="ssid" onKeyUp="handler(event)">
         </label>
         <label>
           <span>Password</span>
-          <input id="password" type="text" name="password">
+          <input id="password" type="text" name="password" onKeyUp="handler(event)">
         </label>
         <label>
-          <span>hidden</span>
-          <input id="hidden" type="checkbox" value="1">
+          <span>Network hidden</span>
+          <input id="hidden" type="checkbox" onChange="handler(event)">
         </label>
         <label>
           <span>Encryption</span>
-          <select name="encryption">
+          <select name="encryption" onChange="handler(event)">
             <option value="WPA2">WPA2</option>
             <option value="WEP">WEP</option>
             <option value="">No encryption</option>
@@ -42,3 +43,4 @@
   </section>
 
 </body>
+</html>
