@@ -49,6 +49,7 @@ table {
 
 /*my own css hacks*/
 
+/*
 ==================================
 Grid
 ==================================
@@ -86,6 +87,7 @@ h1, h2, h3, h4 {
 h1 {
   font-size: 36px;
   line-height: 44px;
+  padding-top: 36px;
 }
 
 h2 {
@@ -125,13 +127,21 @@ textarea {
 }
 
 .wifi-form-group input,
-.wifi-form-group select,
-.wifi-form-group textarea {
+.wifi-form-group select {
   border: 1px solid #000;
   border-radius: 5px;
   color: #000;
-  margin: 5px 0 12px 0;
+  margin: 12px 0px 12px 0px;
   padding: 5px 5px 5px 5px;
+  width: 100%;
+}
+
+.wifi-form-group .checkbox {
+  width: 0%;
+}
+
+.wifi-form-group select {
+  width: 50%;
 }
 
 .wifi-form-group label span {
@@ -139,5 +149,6 @@ textarea {
 }
 
 .wifi-form-group .btn {
-  color: #fff;
+  color: #000;
+  margin-left: 66px;
 }
