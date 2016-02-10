@@ -1,6 +1,50 @@
 document.addEventListener('DOMContentLoaded', init);
 
 var handler;
+var printhandler;
+
+var seperationChar = ','
+var lastNetworkKey = '*#*#'
+
+function stringtoBool(string) {
+  return string == 'true';
+}
+
+function generateCode(ssid, encryption, password, hidden) {
+  return showQRCode('WIFI:S:'+ssid+
+                    ';T:'+encryption+
+                    ';P:'+password+
+                    ';H:'+hidden+';;');
+}
+
+function stringToNetworkInfo(string) {
+  var list = string.split(seperationChar); //first element is hidden value, second is encryption
+  list[0] = stringtoBool(list[0]);
+  return list;
+} 
+
+function getNetworkInfo(ssid) {
+  var infoString = localStorage.getItem(ssid);
+  if(infoString) {
+    return stringToNetworkInfo(infoString);
+  } 
+  else {
+    return false;
+  }
+}
+
+function setNetworkInfo(ssid, hidden, encryption) {
+  var joinedString = hidden+seperationChar+encryption;
+  localStorage.setItem(ssid, joinedString);
+}
+
+function setLastNetwork(ssid) {
+  localStorage.setItem(lastNetworkKey, ssid);
+}
+
+function getLastNetwork() {
+  return localStorage.getItem(lastNetworkKey);
+}
 
 function init() {
 
@@ -12,19 +56,50 @@ function init() {
   var output = document.getElementById('output');
 
   handler = function handler(event) {
+    var code = generateCode(ssid.value, encryption.value, password.value, hidden.checked)
+
     if(output.lastChild) {
-      output.replaceChild(showQRCode('WIFI:S:'+ssid.value+
-                                  ';T:'+encryption.value+
-                                  ';P:'+password.value+
-                                  ';H:'+hidden.checked+';;'),
-                          output.lastChild);
+      output.replaceChild(code, output.lastChild);
     }
     else {
-      output.appendChild(showQRCode('WIFI:S:'+ssid.value+
-                                  ';T:'+encryption.value+
-                                  ';P:'+password.value+
-                                  ';H:'+hidden.checked+';;'));
+      output.appendChild(code);
     }
+  }
+
+  function keyUpHandler(event) {
+    var networkInfo = getNetworkInfo(ssid.value);
+    if(networkInfo) {
+      hidden.checked = networkInfo[0];
+      encryption.value = networkInfo[1];
+    }
+    handler(event);
+    setLastNetwork(ssid.value);
+  }
+
+  if(getLastNetwork()) {
+    ssid.value = getLastNetwork();
+    keyUpHandler(false);
+  };
+
+
+  printhandler = function printhandler(event) {
+    window.print();
+  }
+
+  ssid.onkeyup = keyUpHandler;
+
+  password.onkeyup = function(event) {
+    handler(event);
+  }
+
+  hidden.onchange = function(event) {
+    setNetworkInfo(ssid.value, hidden.checked, encryption.value)
+    handler(event);
+  }
+
+  encryption.onchange = function(event) {
+    setNetworkInfo(ssid.value, hidden.checked, encryption.value)
+    handler(event);
   }
 }
 
