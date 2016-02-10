@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Wifi cheat sheet</title>
-  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="stylesheet.css" media="screen">
+  <link rel="stylesheet" href="print.css" media="print">
   <script src="script.js"></script>
 </head>
 
@@ -17,25 +18,27 @@
       <fieldset class="grid wifi-form-group">
         <label>
           <span>SSID</span>
-          <input id="ssid" type="text" name="ssid" onKeyUp="handler(event)">
+          <input id="ssid" type="text" name="ssid">
         </label>
         <label>
           <span>Password</span>
-          <input id="password" type="text" name="password" onKeyUp="handler(event)">
+          <input id="password" type="text" name="password">
         </label>
-        <label>
+        <label class="checkbox">
           <span>Network hidden</span>
-          <input id="hidden" type="checkbox" onChange="handler(event)">
+          <input class="checkbox" id="hidden" type="checkbox">
         </label>
-        <label>
-          <span>Encryption</span>
-          <select name="encryption" onChange="handler(event)">
-            <option value="WPA2">WPA2</option>
-            <option value="WEP">WEP</option>
-            <option value="">No encryption</option>
-          </select>
-        </label>
-        <button type="button">Show</button>
+        <div>
+          <label>
+            <span>Encryption</span>
+            <select name="encryption">
+              <option value="WPA2">WPA2</option>
+              <option value="WEP">WEP</option>
+              <option value="">No encryption</option>
+            </select>
+          </label>
+          <button class="btn" type="button" onClick="printhandler(event)">Print</button>
+        </div>
 
         <div id="output"></div>
       </fieldset>
