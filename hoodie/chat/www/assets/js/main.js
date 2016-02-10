@@ -13,7 +13,7 @@ chatForm.on('submit', sendMessage);
 chatBox.on('keydown', checkSubmit);
 
 function checkSubmit(e) {
-  if(e.metaKey && e.keyCode === 13) {
+  if(e.keyCode === 13) {
     sendMessage(e);
   }
 }
@@ -50,17 +50,13 @@ function sendMessage(e) {
 
     var messageTemplate = $('<div></div>');
     var messageContentContainer = $('<div></div>');
-    var messageUser = $('<h2>'+message.user+'</h2>');
-    var messageDate = $(''+date.toLocaleTimeString()+': ');
-    var messageContent = $('<p>'+message.message+'</p>');
+    var messageContent = $('<h6>'+message.user+'</h6>'+
+                           '<span>'+date.toLocaleTimeString()+'</span>'+
+                           '<p>'+message.message+'</p>');
 
-    messageContentContainer.append(messageUser);
-    messageContentContainer.append(messageDate);
     messageContentContainer.append(messageContent);
     messageTemplate.append(messageContentContainer);
     messageTemplate.appendTo(chatStream);
-    //scrollIntoViewIfNeeded(messageTemplate[0]);
-
   }
 
 }
